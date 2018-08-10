@@ -45,7 +45,7 @@ export function tokenGetter() {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     NgFlashMessagesModule.forRoot(),
     HttpClientModule,
     JwtModule.forRoot({
