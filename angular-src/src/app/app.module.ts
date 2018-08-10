@@ -21,10 +21,10 @@ import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '/register', component: RegisterComponent},
-  {path: '/login', component: LoginComponent},
-  {path: '/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: '/profile', component: ProfileComponent, canActivate: [AuthGuard]}
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
 ];
 
 export function tokenGetter() {
@@ -50,9 +50,7 @@ export function tokenGetter() {
     HttpClientModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:3000'],
-        blacklistedRoutes: ['']
+        tokenGetter: tokenGetter
       }
     })
   ],
